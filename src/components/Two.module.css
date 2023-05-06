@@ -1,0 +1,123 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 4rem 2rem 11.5rem 2rem;
+}
+
+.player,
+.computer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.player span,
+.computer span {
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.computer > :first-child {
+  background-color: hsl(216, 34%, 14%);
+  opacity: 0.4;
+  height: 6.5rem;
+  width: 6.5rem;
+  border-radius: 50%;
+  margin-bottom: 0.4rem;
+}
+
+.circleOne {
+  background-color: hsl(0, 0%, 100%);
+  height: 5.6rem;
+  width: 5.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circleTwo {
+  background-color: #ccc;
+  height: 5.9rem;
+  width: 5.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.scissorsInnerContainer,
+.spockInnerContainer,
+.paperInnerContainer,
+.lizardInnerContainer,
+.rockInnerContainer {
+  height: 7.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scissorsInnerContainer {
+  background-color: hsl(40, 84%, 53%);
+}
+
+.spockInnerContainer {
+  background-color: hsl(189, 59%, 53%);
+}
+
+.paperInnerContainer {
+  background-color: hsl(230, 89%, 62%);
+}
+
+.lizardInnerContainer {
+  background-color: hsl(261, 73%, 60%);
+}
+
+.rockInnerContainer {
+  background-color: hsl(349, 71%, 52%);
+}
+
+.scissorsOuterContainer,
+.spockOuterContainer,
+.paperOuterContainer,
+.lizardOuterContainer,
+.rockOuterContainer {
+  height: 7.9rem;
+  width: 7.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.scissorsOuterContainer {
+  background-color: hsl(39, 94%, 37%);
+}
+
+.spockOuterContainer {
+  background-color: hsl(189, 69%, 33%);
+}
+
+.paperOuterContainer {
+  background-color: hsl(230, 72%, 35%);
+}
+
+.lizardOuterContainer {
+  background-color: hsl(261, 72%, 28%);
+}
+
+.rockOuterContainer {
+  background-color: hsl(349, 74%, 30%);
+}
+
+.image {
+  width: 2.6rem;
+  /* height: 2.4rem; */
+  height: auto;
+}
