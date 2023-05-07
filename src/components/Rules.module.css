@@ -22,3 +22,9 @@
 .close {
   cursor: pointer;
 }
+
+@media (max-width: 20.75rem) {
+  .rules {
+    width: 100%;
+  }
+}

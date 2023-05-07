@@ -22,7 +22,7 @@
   letter-spacing: 0.1rem;
 }
 
-.computer > :first-child {
+.computer > .blank {
   background-color: hsl(216, 34%, 14%);
   opacity: 0.4;
   height: 6.5rem;
@@ -118,6 +118,17 @@
 
 .image {
   width: 2.6rem;
-  /* height: 2.4rem; */
   height: auto;
+}
+
+@media (max-width: 22rem) {
+  .container {
+    margin-inline: 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+  }
 }

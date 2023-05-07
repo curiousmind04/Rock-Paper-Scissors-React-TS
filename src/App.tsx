@@ -9,6 +9,7 @@ import Three from "./components/Three";
 function App() {
   const [showRules, setShowRules] = useState<boolean>();
   const [choice, setChoice] = useState<string>();
+  const [computerChoice, setComputerChoice] = useState<string>();
   const [step, setStep] = useState<number>(1);
 
   const rulesHandler = () => {
@@ -18,11 +19,30 @@ function App() {
   const choiceHandler = (choice: string) => {
     setChoice(choice);
     setStep(2);
+
+    const computerPlay = Math.floor(Math.random() * 5 + 1);
+
+    if (computerPlay === 1) {
+      setComputerChoice("scissors");
+    }
+    if (computerPlay === 2) {
+      setComputerChoice("spock");
+    }
+    if (computerPlay === 3) {
+      setComputerChoice("paper");
+    }
+    if (computerPlay === 4) {
+      setComputerChoice("lizard");
+    }
+    if (computerPlay === 5) {
+      setComputerChoice("rock");
+    }
   };
+
+  console.log(computerChoice);
 
   const changeStep = () => {
     setStep((prevState) => prevState + 1);
-    console.log("hi");
   };
 
   console.log(step);
@@ -49,7 +69,9 @@ function App() {
         {choice && step === 2 && (
           <Two chosen={choice} onNextStep={changeStep} />
         )}
-        {step === 3 && <Three />}
+        {step === 3 && computerChoice && choice && (
+          <Three computer={computerChoice} chosen={choice} />
+        )}
         {showRules === true && <Rules onRulesHide={rulesHandler} />}
       </main>
       <footer>

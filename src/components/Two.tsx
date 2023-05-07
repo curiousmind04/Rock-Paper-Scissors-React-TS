@@ -15,6 +15,8 @@ const Two: React.FC<Props> = ({ chosen, onNextStep }) => {
     };
   }, [onNextStep]);
 
+  console.log("TWO");
+
   return (
     <>
       <div className={classes.container}>
@@ -35,7 +37,7 @@ const Two: React.FC<Props> = ({ chosen, onNextStep }) => {
           <span>You Picked</span>
         </div>
         <div className={classes.computer}>
-          <div></div>
+          <div className={classes.blank}></div>
           <span>The House Picked</span>
         </div>
       </div>

@@ -1,5 +1,7 @@
 .container {
-  margin-inline: 2rem;
+  /* margin-inline: 2rem; */
+  width: 19.5rem;
+  margin-inline: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +113,35 @@
 
 .image {
   width: 2.1rem;
-  /* height: 2.4rem; */
   height: auto;
+}
+
+@media (max-width: 20.75rem) {
+  .container {
+    width: 14.625rem;
+    height: 9.75rem;
+  }
+  .pentagon {
+    z-index: -1;
+    scale: 0.75;
+  }
+  .scissorsOuterContainer,
+  .spockOuterContainer,
+  .paperOuterContainer,
+  .lizardOuterContainer,
+  .rockOuterContainer {
+    scale: 0.75;
+  }
+  .spockOuterContainer {
+    top: 1rem;
+  }
+  .paperOuterContainer {
+    top: 1rem;
+  }
+  .lizardOuterContainer {
+    left: calc(50% - 96px);
+  }
+  .rockOuterContainer {
+    right: calc(50% - 96px);
+  }
 }

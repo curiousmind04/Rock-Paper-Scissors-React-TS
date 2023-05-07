@@ -12,7 +12,11 @@ const Rules: React.FC<Props> = ({ onRulesHide }) => {
   return (
     <div className={classes.container}>
       <h2>Rules</h2>
-      <img src="/images/image-rules-bonus.svg" alt="rules diagram" />
+      <img
+        className={classes.rules}
+        src="/images/image-rules-bonus.svg"
+        alt="rules diagram"
+      />
       <img
         className={classes.close}
         onClick={rulesHandler}
