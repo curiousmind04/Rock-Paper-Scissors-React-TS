@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import classes from "./Two.module.css";
+
+import classes from "./Play.module.css";
 
 type Props = {
   chosen: string;

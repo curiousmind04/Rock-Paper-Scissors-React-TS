@@ -1,3 +1,7 @@
+.container {
+  overflow: hidden;
+}
+
 header {
   padding: 2rem;
 }

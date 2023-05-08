@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 4rem 2rem 11.5rem 2rem;
+  margin: 4rem 2rem 4.4rem 2rem;
 }
 
 .player,
@@ -61,6 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .scissorsInnerContainer {
@@ -105,7 +106,7 @@
 }
 
 .paperOuterContainer {
-  background-color: hsl(230, 72%, 35%);
+  background-color: hsl(230, 92%, 51%);
 }
 
 .lizardOuterContainer {
@@ -121,6 +122,60 @@
   height: auto;
 }
 
+.result {
+  text-align: center;
+}
+
+.result > span {
+  display: block;
+  color: hsl(0, 0%, 100%);
+  font-size: 3.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.result > button {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(229, 25%, 31%);
+  width: 14rem;
+  height: 3rem;
+  font: inherit;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.winner {
+  background: repeating-radial-gradient(
+    circle at center,
+    hsl(214, 47%, 23%) 0,
+    hsl(237, 49%, 15%) 0.6rem
+  );
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  animation: scale 2s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0.4;
+  }
+}
+
 @media (max-width: 22rem) {
   .container {
     margin-inline: 0;
@@ -130,5 +185,8 @@
     gap: 1.5rem;
     margin-top: 3rem;
     margin-bottom: 6rem;
+  }
+  .result > button {
+    width: 10rem;
   }
 }

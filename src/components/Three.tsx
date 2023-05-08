@@ -1,12 +1,24 @@
-import classes from "./Two.module.css";
+import { useEffect } from "react";
+
+import classes from "./Play.module.css";
 
 type Props = {
   chosen: string;
   computer: string;
+  onNextStep: () => void;
 };
 
-const Three: React.FC<Props> = ({ chosen, computer }) => {
+const Three: React.FC<Props> = ({ chosen, computer, onNextStep }) => {
   console.log("THREE");
+
+  useEffect(() => {
+    const timer = setTimeout(onNextStep, 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [onNextStep]);
+
   return (
     <>
       <div className={classes.container}>
