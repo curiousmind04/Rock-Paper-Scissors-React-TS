@@ -72,8 +72,49 @@ footer > button {
   cursor: pointer;
 }
 
+@media (hover: hover) {
+  footer > button:hover {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(229, 25%, 31%);
+  }
+}
+
 @media (max-width: 20.75rem) {
   header > div {
-    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    padding: 0.5rem 0.4rem 0.5rem 0.6rem;
+  }
+}
+
+@media (min-width: 44rem) {
+  header {
+    padding: 3rem;
+    max-width: 48rem;
+    margin-inline: auto;
+  }
+  header > div {
+    padding: 1rem 1.4rem 1rem 1.8rem;
+    border-radius: 0.7rem;
+  }
+  header h1 span {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.3rem;
+  }
+  header .score {
+    width: 8.6rem;
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem 1rem 1.4rem;
+  }
+  header .score > :first-child {
+    font-size: 1rem;
+  }
+  header .score > :last-child {
+    font-size: 3.8rem;
+    line-height: 2.9rem;
+  }
+  footer {
+    text-align: right;
+    padding: 2rem;
   }
 }

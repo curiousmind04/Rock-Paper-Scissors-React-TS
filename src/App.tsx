@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import classes from "./App.module.css";
 import One from "./components/One";
@@ -13,7 +13,14 @@ function App() {
   const [computerChoice, setComputerChoice] = useState<string>();
   const [step, setStep] = useState<number>(1);
   const [winner, setWinner] = useState<string>();
-  const [score, setScore] = useState<number>(0);
+  const [score, setScore] = useState<number>(() => {
+    const score = localStorage.getItem("score");
+    if (score) {
+      return JSON.parse(score);
+    } else {
+      return 0;
+    }
+  });
 
   const rulesHandler = () => {
     setShowRules((prevState) => !prevState);
@@ -42,7 +49,7 @@ function App() {
     }
   };
 
-  console.log(computerChoice);
+  // console.log(computerChoice);
 
   const changeStep = () => {
     if (step === 3) {
@@ -118,7 +125,11 @@ function App() {
     setStep(1);
   };
 
-  console.log(step);
+  // console.log(step);
+
+  useEffect(() => {
+    localStorage.setItem("score", JSON.stringify(score));
+  }, [score]);
 
   return (
     <div className={classes.container}>

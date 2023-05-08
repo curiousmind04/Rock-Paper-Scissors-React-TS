@@ -12,7 +12,7 @@ const Four: React.FC<Props> = ({ chosen, computer, winner, onReset }) => {
     onReset();
   };
 
-  console.log("FOUR");
+  // console.log("FOUR");
 
   return (
     <>
@@ -54,14 +54,14 @@ const Four: React.FC<Props> = ({ chosen, computer, winner, onReset }) => {
           </div>
           <span>The House Picked</span>
         </div>
-      </div>
-      <div className={classes.result}>
-        {winner === "player" && <span>You Win</span>}
-        {winner === "computer" && <span>You Lose</span>}
-        {winner === "tie" && <span>Tie Game</span>}
-        <button type="button" onClick={resetHandler}>
-          Play Again
-        </button>
+        <div className={classes.result}>
+          {winner === "player" && <span>You Win</span>}
+          {winner === "computer" && <span>You Lose</span>}
+          {winner === "tie" && <span>Tie Game</span>}
+          <button type="button" onClick={resetHandler}>
+            Play Again
+          </button>
+        </div>
       </div>
     </>
   );

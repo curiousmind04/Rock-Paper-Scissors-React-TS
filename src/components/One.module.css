@@ -1,12 +1,11 @@
 .container {
-  /* margin-inline: 2rem; */
   width: 19.5rem;
   margin-inline: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 9rem;
+  margin-top: 7rem;
   margin-bottom: 7rem;
 }
 
@@ -120,6 +119,8 @@
   .container {
     width: 14.625rem;
     height: 9.75rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
   .pentagon {
     z-index: -1;
@@ -143,5 +144,40 @@
   }
   .rockOuterContainer {
     right: calc(50% - 96px);
+  }
+}
+
+@media (min-width: 44rem) {
+  .container {
+    width: 27.525rem;
+    height: 18.2rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  .pentagon {
+    z-index: -1;
+    scale: 1.4;
+  }
+  .scissorsOuterContainer,
+  .spockOuterContainer,
+  .paperOuterContainer,
+  .lizardOuterContainer,
+  .rockOuterContainer {
+    scale: 1.4;
+    /* z-index: 2; */
+  }
+  .spockOuterContainer {
+    top: 3.8rem;
+    left: 1rem;
+  }
+  .paperOuterContainer {
+    top: 3.8rem;
+    right: 1rem;
+  }
+  .lizardOuterContainer {
+    left: calc(50% - 9rem);
+  }
+  .rockOuterContainer {
+    right: calc(50% - 9rem);
   }
 }

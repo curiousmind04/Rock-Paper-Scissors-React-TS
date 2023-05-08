@@ -1,9 +1,13 @@
 .container {
+  max-width: 23.5rem;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 4rem 2rem 4.4rem 2rem;
+  row-gap: 4rem;
+  padding-inline: 2rem;
+  margin: 4rem auto 0rem auto;
 }
 
 .player,
@@ -123,6 +127,7 @@
 }
 
 .result {
+  width: 100%;
   text-align: center;
 }
 
@@ -165,14 +170,11 @@
   animation-fill-mode: forwards;
 }
 
-@keyframes scale {
-  0% {
-    transform: scale(1);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(3);
-    opacity: 0.4;
+@media (hover: hover) {
+  .result > button:hover {
+    background-color: transparent;
+    color: hsl(0, 0%, 100%);
+    border: 2px solid hsl(0, 0%, 100%);
   }
 }
 
@@ -184,9 +186,108 @@
     text-align: center;
     gap: 1.5rem;
     margin-top: 3rem;
-    margin-bottom: 6rem;
+  }
+  .result {
+    margin-top: 2rem;
   }
   .result > button {
     width: 10rem;
+  }
+}
+
+@media (min-width: 44rem) {
+  .container {
+    max-width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-inline: 0;
+  }
+  .player,
+  .computer {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+  .player span,
+  .computer span {
+    font-size: 1.4rem;
+    letter-spacing: 0.15rem;
+  }
+  .computer > .blank {
+    height: 13rem;
+    width: 13rem;
+    position: relative;
+    top: 2rem;
+  }
+  .circleOne {
+    width: 13rem;
+    height: 13rem;
+  }
+  .circleTwo {
+    width: 13rem;
+    height: 13.6rem;
+  }
+  .scissorsInnerContainer,
+  .spockInnerContainer,
+  .paperInnerContainer,
+  .lizardInnerContainer,
+  .rockInnerContainer {
+    height: 17rem;
+  }
+  .scissorsOuterContainer,
+  .spockOuterContainer,
+  .paperOuterContainer,
+  .lizardOuterContainer,
+  .rockOuterContainer {
+    height: 17.8rem;
+    width: 17rem;
+  }
+  .image {
+    width: 6rem;
+  }
+  .winner {
+    background: repeating-radial-gradient(
+      circle at center,
+      hsl(214, 47%, 23%) 0.5rem,
+      hsl(237, 49%, 15%) 1.6rem
+    );
+    width: 14rem;
+    height: 14rem;
+  }
+}
+
+@media (min-width: 70rem) {
+  .container {
+    max-width: 65rem;
+    display: grid;
+    /* grid-template-columns: 37.5% 25% 37.5%; */
+    grid-template-areas: "player result computer";
+    gap: 3rem;
+  }
+  .player {
+    grid-area: player;
+  }
+  .result {
+    grid-area: result;
+    align-self: center;
+    margin-top: 3rem;
+    margin-inline: 1.5rem;
+    width: auto;
+  }
+  .computer {
+    grid-area: computer;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0.4;
   }
 }

@@ -16,7 +16,7 @@ const Two: React.FC<Props> = ({ chosen, onNextStep }) => {
     };
   }, [onNextStep]);
 
-  console.log("TWO");
+  // console.log("TWO");
 
   return (
     <>

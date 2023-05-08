@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Three: React.FC<Props> = ({ chosen, computer, onNextStep }) => {
-  console.log("THREE");
+  // console.log("THREE");
 
   useEffect(() => {
     const timer = setTimeout(onNextStep, 3000);
